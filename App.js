@@ -18,17 +18,36 @@ export default function App() {
             if (route.name === "Hoje") {
               iconName = "sunny";
             } else if (route.name === "Previsão") {
-              iconName = "cloud";
+              iconName = "calendar";
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: "#FFD700",
           tabBarInactiveTintColor: "gray",
+          tabBarStyle: {
+            backgroundColor: "#192f6a",
+          },
+          headerStyle: {
+            backgroundColor: "#192f6a",
+          },
+          headerTintColor: "#FFF",
         })}
       >
-        <Tab.Screen name="Hoje" component={HomeScreen} />
-        <Tab.Screen name="Previsão" component={ForecastScreen} />
+        <Tab.Screen 
+          name="Hoje" 
+          component={HomeScreen} 
+          options={{ 
+            title: "Clima Atual" 
+          }} 
+        />
+        <Tab.Screen 
+          name="Previsão" 
+          component={ForecastScreen} 
+          options={{ 
+            title: "Previsão 5 Dias" 
+          }} 
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
